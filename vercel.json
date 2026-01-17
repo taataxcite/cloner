@@ -1,21 +1,28 @@
 {
     "version": 2,
     "framework": null,
+    "installCommand": "composer install --no-dev --optimize-autoloader --ignore-platform-reqs && npm install",
+    "buildCommand": "npm run build",
+    "outputDirectory": "public",
     "functions": {
         "api/index.php": { "runtime": "vercel-php@0.7.1" }
     },
     "routes": [
         {
-            "src": "/(css|js|images|fonts)/(.*)",
-            "dest": "/public/$1/$2"
+            "src": "/css/(.*)",
+            "dest": "/css/$1"
+        },
+        {
+            "src": "/js/(.*)",
+            "dest": "/js/$1"
         },
         {
             "src": "/favicon\\.svg",
-            "dest": "/public/favicon.svg"
+            "dest": "/favicon.svg"
         },
         {
             "src": "/favicon\\.ico",
-            "dest": "/public/favicon.ico"
+            "dest": "/favicon.ico"
         },
         {
             "src": "/(.*)",
