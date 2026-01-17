@@ -1,0 +1,478 @@
+/* CSS Variables */
+:root {
+    --color-primary: #0891b2;
+    --color-primary-dark: #0e7490;
+    --color-checkbox-blue: #2563eb;
+    --color-terms-bg: #f0f9ff;
+    --color-terms-border: #3b82f6;
+    --color-border: #e5e7eb;
+    --color-border-focus: #0891b2;
+    --color-placeholder: #9ca3af;
+    --color-text: #1f2937;
+    --color-text-light: #6b7280;
+    --color-button-disabled-bg: #e5e7eb;
+    --color-button-disabled-text: #9ca3af;
+    --color-white: #ffffff;
+    --color-divider: #0891b2;
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-white);
+    color: var(--color-text);
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+/* Container */
+.payment-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+}
+
+/* Header */
+.payment-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background-color: var(--color-white);
+}
+
+.back-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    margin: -8px;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-button:hover {
+    opacity: 0.7;
+}
+
+.header-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.header-spacer {
+    width: 24px;
+}
+
+.header-divider {
+    height: 3px;
+    background-color: var(--color-divider);
+}
+
+/* Total Section */
+.total-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.total-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.total-label {
+    font-size: 14px;
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.items-count {
+    color: var(--color-text-light);
+    font-weight: 400;
+}
+
+.total-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.view-order-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.view-order-link:hover {
+    color: var(--color-primary-dark);
+}
+
+.view-order-link svg {
+    flex-shrink: 0;
+}
+
+/* Progress Bar */
+.progress-bar {
+    height: 6px;
+    background-color: #bfdbfe;
+    width: 100%;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 75%;
+    background-color: var(--color-checkbox-blue);
+}
+
+/* Main Content */
+.payment-content {
+    flex: 1;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.payment-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.3;
+}
+
+/* Terms Box */
+.terms-box {
+    background-color: var(--color-terms-bg);
+    border-left: 4px solid var(--color-terms-border);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.terms-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.terms-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checkbox-custom {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    border-radius: 4px;
+    background-color: var(--color-checkbox-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.checkbox-custom svg {
+    display: none;
+}
+
+.terms-checkbox:checked + .checkbox-custom svg {
+    display: block;
+}
+
+.terms-checkbox:not(:checked) + .checkbox-custom {
+    background-color: var(--color-white);
+    border: 2px solid var(--color-border);
+}
+
+.terms-text {
+    font-size: 14px;
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.terms-link {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.terms-link:hover {
+    color: var(--color-primary-dark);
+}
+
+/* Payment Form Section */
+.payment-form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.payment-method-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 16px;
+    color: var(--color-text);
+    background-color: var(--color-white);
+    transition: border-color 0.2s ease;
+}
+
+.form-input::placeholder {
+    color: var(--color-placeholder);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-border-focus);
+}
+
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.card-icon {
+    position: absolute;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+.card-type-icon {
+    display: block;
+}
+
+.card-type-icon.hidden {
+    display: none;
+}
+
+.card-input {
+    padding-left: 52px;
+}
+
+.form-row {
+    display: flex;
+    gap: 12px;
+}
+
+.form-group-half {
+    flex: 1;
+}
+
+/* Save Card Checkbox */
+.save-card-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 4px 0;
+}
+
+.save-card-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checkbox-custom-small {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border-radius: 4px;
+    background-color: var(--color-white);
+    border: 2px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.checkbox-custom-small svg {
+    display: none;
+}
+
+.save-card-checkbox:checked + .checkbox-custom-small {
+    background-color: var(--color-checkbox-blue);
+    border-color: var(--color-checkbox-blue);
+}
+
+.save-card-checkbox:checked + .checkbox-custom-small svg {
+    display: block;
+}
+
+.save-card-text {
+    font-size: 14px;
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+/* Pay Button */
+.pay-button-container {
+    padding: 16px;
+    padding-bottom: 32px;
+    background-color: var(--color-white);
+}
+
+.pay-button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pay-button:disabled {
+    background-color: var(--color-button-disabled-bg);
+    color: var(--color-button-disabled-text);
+    cursor: not-allowed;
+}
+
+.pay-button:not(:disabled) {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.pay-button:not(:disabled):hover {
+    background-color: var(--color-primary-dark);
+}
+
+.pay-button:not(:disabled):active {
+    transform: scale(0.98);
+}
+
+/* Pay Button Loading State */
+.pay-button.loading {
+    pointer-events: none;
+    position: relative;
+    color: transparent !important;
+}
+
+.pay-button.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    .payment-container {
+        max-width: 480px;
+        margin: 0 auto;
+        min-height: 100vh;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .payment-content {
+        padding: 32px 24px;
+    }
+
+    .total-section {
+        padding: 20px 24px;
+    }
+
+    .pay-button-container {
+        padding: 20px 24px;
+        padding-bottom: 40px;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+    body {
+        background-color: #f3f4f6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+    }
+
+    .payment-container {
+        max-width: 420px;
+        min-height: auto;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    .payment-header {
+        padding: 16px 20px;
+    }
+
+    .payment-title {
+        font-size: 20px;
+    }
+}

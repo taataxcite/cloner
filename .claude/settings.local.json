@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(composer create-project:*)",
+      "Bash(php artisan serve:*)",
+      "Bash(curl:*)",
+      "Bash(ls -la \"c:\\\\Users\\\\z.mahsoune\\\\Downloads\\\\whatsapp-master\\\\cloner\\\\resources\\\\views\\\\payment\"\" && ls -la \"c:Usersz.mahsouneDownloadswhatsapp-masterclonerresourcesviewslayouts\"\")",
+      "Bash(php artisan route:list:*)",
+      "Bash(php artisan cache:clear:*)",
+      "Bash(php artisan view:clear:*)",
+      "Bash(php artisan:*)",
+      "Bash(php artisan config:clear:*)"
+    ]
+  }
+}
